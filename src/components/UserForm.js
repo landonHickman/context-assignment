@@ -6,17 +6,20 @@ const UserForm = (props) => {
   const {newUser} = props
   const user = useContext(UserContext)
   const [firstName, setFirstName] = useState(newUser ? newUser : user.firstName)
-  const [lastName, setLastName] = useState(user.lastName)
-  const [alias, setAlias] = useState(user.alias)
-  const [email, setEmail] = useState(user.email)
+  const [lastName, setLastName] = useState(newUser ? newUser : user.lastName)
+  const [alias, setAlias] = useState(newUser ? newUser : user.alias)
+  const [email, setEmail] = useState(newUser ? newUser : user.email)
 
-  console.log('First Name',user.firstName)
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if(newUser){
       //doesn't really work... probably need to store everything about my user in an array
       // i.e. user = [ { firstName: bruce, ....}]
-      user.addFirstName(firstName)
+      user.addHero(firstName)
+      user.addHero(lastName)
+      user.addHero(alias)
+      user.addHero(email)
     }else{
       user.setFirstName(firstName)
       user.setLastName(lastName)

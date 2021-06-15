@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
@@ -12,7 +11,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Container>
+    <Container style={{marginTop: '25px'}}>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/users/new' component={AddUser}/>

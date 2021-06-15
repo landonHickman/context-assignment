@@ -5,7 +5,7 @@ const AddUser = () => {
   const [newUser, setNewUser] = useState([])
   return(
     <>
-      <UserForm newUser={newUser}/>
+      <UserForm newUser={newUser} setNewUser={setNewUser}/>
     </>
   )
 }

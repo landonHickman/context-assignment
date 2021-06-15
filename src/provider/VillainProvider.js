@@ -7,14 +7,18 @@ const VillainProvider = (props) => {
   const [firstName, setFirstName] = useState('Obadiah')
   const [lastName, setLastName] = useState('Stane')
   const [alias, setAlias] = useState('Iron Monger')
-  const [email, setEmail] = useState('ironmonger@villain.com')
+  const [power, setPower] = useState('Exoskeleton Armor')
 
   return(
     <VillainContext.Provider value={{
       firstName,
       lastName,
       alias,
-      email,
+      power,
+      setFirstName,
+      setLastName,
+      setAlias,
+      setPower,
     }}>
       {props.children}
     </VillainContext.Provider>
