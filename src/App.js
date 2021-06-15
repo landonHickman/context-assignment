@@ -6,10 +6,11 @@ import { Container } from 'semantic-ui-react';
 import UserProfile from './components/UserProfile';
 import AddUser from './components/AddUser';
 import VillainProfile from './components/VillainProfile';
+import { Background } from './styles';
 
 function App() {
   return (
-    <>
+    <Background>
     <Navbar/>
     <Container style={{marginTop: '25px'}}>
       <Switch>
@@ -19,8 +20,10 @@ function App() {
         <Route exact path='/villains/profile' component={VillainProfile}/>
       </Switch>
     </Container>
-    </>
+    </Background>
   );
 }
+
+
 
 export default App;

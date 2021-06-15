@@ -1,20 +1,21 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Icon } from 'semantic-ui-react'
+import styled from 'styled-components'
 import { UserContext } from '../provider/UserProvider'
 import { VillainContext } from '../provider/VillainProvider'
 
 const Home = () => {
   const user = useContext(UserContext)
   const vill = useContext(VillainContext)
-  console.log('user',user.firstName)
+  console.log('user',user)
   
   const renderUsers = () => {
-    //  return user.hero.map(u => {
+     return user.heros.map(u => {
       return(
-        <div>
+        <C>
           <Card>
-            <Card.Content header={user.firstName+' '+user.lastName}/>
+            <Card.Content header={u.firstName+' '+u.lastName}/>
             <Card.Content  description={user.alias}/>
             <Card.Content extra>
               <Icon name='mail'/>{user.email}
@@ -23,9 +24,9 @@ const Home = () => {
             <Link to='/villains/profile'><Icon name='address book'/>Adversary: {vill.alias}</Link>
             </Card.Content>
           </Card>
-        </div>
+        </C>
       )
-    // })
+    })
   }
     return (
       <div style={{margin: '25px'}}>
@@ -35,4 +36,9 @@ const Home = () => {
  
 }
 
+const C = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+`
 export default Home

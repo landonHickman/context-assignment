@@ -5,8 +5,9 @@ export const UserContext = React.createContext()
 //dont think ill need this
 export const UserConsumer = UserContext.Consumer
 
-let heros = [
-  {
+
+const UserProvider = (props) => {
+  const [heros, setHeros] = useState([{
     firstName: 'Bruce',
     lastName: 'Banner',
     alias: 'The Hulk',
@@ -17,23 +18,20 @@ let heros = [
     lastName: 'Stark',
     alias: 'Iron Man',
     email: 'ironman@avengers.com',
-  },
-]
-
-const UserProvider = (props) => {
-  const [hero, setHero] = useState([])
+  },])
   const [firstName, setFirstName] = useState('Tony')
   const [lastName, setLastName] = useState('Stark')
   const [alias, setAlias] = useState('Iron Man')
   const [email, setEmail] = useState('ironman@avengers.com')
 
   const addHero = (h) => {
-    let newHero = [...hero, h]
-    setHero(newHero)
+    let newHero = [...heros, h]
+    setHeros(newHero)
   }
+  console.log(heros)
   return(
     <UserContext.Provider value={{
-      hero,
+      heros,
       alias,
       firstName,
       lastName,

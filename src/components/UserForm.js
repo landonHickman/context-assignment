@@ -9,6 +9,7 @@ const UserForm = (props) => {
   const [lastName, setLastName] = useState(newUser ? newUser : user.lastName)
   const [alias, setAlias] = useState(newUser ? newUser : user.alias)
   const [email, setEmail] = useState(newUser ? newUser : user.email)
+  const [hero, setHero] = useState([])
 
 
   const handleSubmit = (e) => {
@@ -16,10 +17,11 @@ const UserForm = (props) => {
     if(newUser){
       //doesn't really work... probably need to store everything about my user in an array
       // i.e. user = [ { firstName: bruce, ....}]
-      user.addHero(firstName)
-      user.addHero(lastName)
-      user.addHero(alias)
-      user.addHero(email)
+      setFirstName(firstName)
+      setLastName(lastName)
+      setAlias(alias)
+      setEmail(email)
+      user.addHero({firstName: firstName, lastName: lastName, alias: alias, email: email})
     }else{
       user.setFirstName(firstName)
       user.setLastName(lastName)
