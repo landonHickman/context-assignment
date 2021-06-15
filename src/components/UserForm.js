@@ -9,14 +9,11 @@ const UserForm = (props) => {
   const [lastName, setLastName] = useState(newUser ? newUser : user.lastName)
   const [alias, setAlias] = useState(newUser ? newUser : user.alias)
   const [email, setEmail] = useState(newUser ? newUser : user.email)
-  const [hero, setHero] = useState([])
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if(newUser){
-      //doesn't really work... probably need to store everything about my user in an array
-      // i.e. user = [ { firstName: bruce, ....}]
       setFirstName(firstName)
       setLastName(lastName)
       setAlias(alias)
@@ -63,7 +60,7 @@ const UserForm = (props) => {
         onChange={(e, {value})=>setEmail(value)}
         />
       </Form.Group>
-        <Form.Button>Submit</Form.Button>    
+        <Form.Button color='blue'>Submit</Form.Button>    
     </Form>
     </>
   )

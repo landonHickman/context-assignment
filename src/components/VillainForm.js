@@ -50,7 +50,7 @@ const VillainForm = () => {
         onChange={(e, {value})=>setPower(value)}
         />
       </Form.Group>
-        <Form.Button>Submit</Form.Button>    
+        <Form.Button color='blue'>Submit</Form.Button>    
     </Form>
     </>
   )

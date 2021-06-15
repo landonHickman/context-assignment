@@ -8,17 +8,16 @@ import { VillainContext } from '../provider/VillainProvider'
 const Home = () => {
   const user = useContext(UserContext)
   const vill = useContext(VillainContext)
-  console.log('user',user)
   
   const renderUsers = () => {
      return user.heros.map(u => {
       return(
-        <C>
+        <C key={u.email}>
           <Card>
             <Card.Content header={u.firstName+' '+u.lastName}/>
-            <Card.Content  description={user.alias}/>
+            <Card.Content  description={u.alias}/>
             <Card.Content extra>
-              <Icon name='mail'/>{user.email}
+              <Icon name='mail'/>{u.email}
             </Card.Content>
             <Card.Content extra>
             <Link to='/villains/profile'><Icon name='address book'/>Adversary: {vill.alias}</Link>

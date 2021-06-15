@@ -28,7 +28,6 @@ const UserProvider = (props) => {
     let newHero = [...heros, h]
     setHeros(newHero)
   }
-  console.log(heros)
   return(
     <UserContext.Provider value={{
       heros,
